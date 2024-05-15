@@ -6,21 +6,21 @@ const menuItemSchema = new mongoose.Schema({
     required: true,
     default: () => new mongoose.Types.ObjectId(),
   },
-  nome: { type: String, required: true },
-  preco: { type: Number, required: true },
+  name: { type: String, required: true },
+  price: { type: Number, required: true },
 });
 
 export type MenuItemType = InferSchemaType<typeof menuItemSchema>;
 
 const restaurantSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  NomeRestaurante: { type: String, required: true },
-  Cidade: { type: String, required: true },
-  Pais: { type: String, required: true },
-  precoentrega: { type: Number, required: true },
-  tempoestimado: { type: Number, required: true },
-  cozinhas: [{ type: String, required: true }],
-  ItemMenu: [menuItemSchema],
+  restaurantName: { type: String, required: true },
+  city: { type: String, required: true },
+  country: { type: String, required: true },
+  deliveryPrice: { type: Number, required: true },
+  estimatedDeliveryTime: { type: Number, required: true },
+  cuisines: [{ type: String, required: true }],
+  menuItems: [menuItemSchema],
   imageUrl: { type: String, required: true },
   lastUpdated: { type: Date, required: true },
 });

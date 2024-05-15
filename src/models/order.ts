@@ -5,23 +5,23 @@ const orderSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   deliveryDetails: {
     email: { type: String, required: true },
-    nome: { type: String, required: true },
-    endereco: { type: String, required: true },
-    cidade: { type: String, required: true },
+    name: { type: String, required: true },
+    addressLine1: { type: String, required: true },
+    city: { type: String, required: true },
   },
-  Carrinho: [
+  cartItems: [
     {
       menuItemId: { type: String, required: true },
       quantity: { type: Number, required: true },
       name: { type: String, required: true },
     },
   ],
-  Montante: Number,
+  totalAmount: Number,
   status: {
     type: String,
     enum: ["placed", "paid", "inProgress", "outForDelivery", "delivered"],
   },
-  Criado: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now },
 });
 
 const Order = mongoose.model("Order", orderSchema);

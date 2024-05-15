@@ -9,16 +9,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  nome: {
+  name: {
     type: String,
   },
-  endereco: {
+  addressLine1: {
     type: String,
   },
-  cidade: {
+  city: {
     type: String,
   },
-  pais: {
+  country: {
     type: String,
   },
 });
