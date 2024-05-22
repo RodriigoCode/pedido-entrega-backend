@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const utilizadorSchema = new mongoose.Schema({
   auth0Id: {
     type: String,
     required: true,
@@ -23,5 +23,5 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("User", userSchema);
-export default User;
+const Utilizador = mongoose.model("Utilizador", utilizadorSchema);
+export default Utilizador;
