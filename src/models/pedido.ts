@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const pedidoSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
   restaurant: { type: mongoose.Schema.Types.ObjectId, ref: "Restaurant" },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   deliveryDetails: {
@@ -24,5 +24,5 @@ const pedidoSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-const Pedido = mongoose.model("Pedido", pedidoSchema);
-export default Pedido;
+const Order = mongoose.model("Order", orderSchema);
+export default Order;

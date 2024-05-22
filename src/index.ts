@@ -2,11 +2,11 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
-import myUserRoute from "./routes/MeuUtilizadorRota";
+import myUserRoute from "./routes/MyUserRoute";
 import { v2 as cloudinary } from "cloudinary";
-import myRestaurantRoute from "./routes/MeuRestauranteRota";
-import orderRoute from "./routes/PedidoRota";
-import restaurantRoute from "./routes/RestauranteRota";
+import myRestaurantRoute from "./routes/MyRestaurantRoute";
+import orderRoute from "./routes/OrderRoute";
+import restaurantRoute from "./routes/RestaurantRoute";
 
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
